@@ -1,0 +1,13 @@
+<doctype html="">
+<title>New Type - Eleclog Database</title>
+<h2>New Type</h2>
+
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+    <dl>
+        {{ render_field(form.description) }}
+        {{ render_field(form.protocol) }}
+    </dl>
+    <p><input type="submit" value="Submit">
+</p></form>
+</doctype>

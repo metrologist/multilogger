@@ -1,0 +1,18 @@
+<doctype html="">
+<title>New Instrument - Eleclog Database</title>
+<h2>New Instrument</h2>
+
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+    <dl>
+        {{ render_field(form.description) }}
+        {{ render_field(form.serial) }}
+        {{ render_field(form.type_id) }}
+        {{ render_field(form.macaddress) }}
+        {{ render_field(form.ipaddress) }}
+        {{ render_field(form.params) }}
+        {{ render_field(form.status) }}
+    </dl>
+    <p><input type="submit" value="Submit">
+</p></form>
+</doctype>

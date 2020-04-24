@@ -1,0 +1,63 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+    background-color: ##F2EFEC;
+    max-width: 1200px;
+}
+nav {
+    background-color: #333132;
+    width: 100%;
+    height: 50px;
+}
+nav img {
+    height: 34px;
+    padding: 8px;
+}
+header {
+    margin: 25px 10px 15px 10px;
+    font-family: Times, Times New Roman, serif;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 44px;
+    line-height: 50px;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0.3px 0.3px 0px gray;
+    letter-spacing: .01em;
+}
+.byline {
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+.byline a {
+    text-transform: uppercase;
+}
+# Set CSS properties for th elements in dataframe
+th_props = [
+  ('font-size', '11px'),
+  ('text-align', 'center'),
+  ('font-weight', 'bold'),
+  ('color', '#6d6d6d'),
+  ('background-color', '#f7f7f9')
+  ]
+
+# Set CSS properties for td elements in dataframe
+td_props = [
+  ('font-size', '11px')
+  ]
+
+# Set table styles
+styles = [
+  dict(selector="th", props=th_props),
+  dict(selector="td", props=td_props)
+  ]
+
+
+(df.style
+    .applymap(color_negative_red, subset=['total_amt_usd_diff','total_amt_usd_pct_diff'])
+    .format({'total_amt_usd_pct_diff': "{:.2%}"})
+    .set_table_styles(styles))
